@@ -104,8 +104,8 @@ ENV/
 !.vscode/extensions.json
 
 .idea/
-manage.py
-db.sqlite3
+/settings.py
+/db.sqlite3
 
 # End of https://www.gitignore.io/api/python,visualstudiocode
 
