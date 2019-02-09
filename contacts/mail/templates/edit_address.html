@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h4>EDYTUJ ADRES</h4>
+    <form method="POST">{% csrf_token %}
+        <label>Miasto: <input name="city" type="text" value="{{ a.city }}"></label>
+        <label>Ulica: <input name="street" type="text" value="{{ a.street }}"></label>
+        <label>Numer domu: <input name="house_num" type="number" min="1" step="1" value="{{ a.house_num }}"></label>
+        <label>Numer mieszkania: <input name="flat_num" type="number" min="1" step="1" value="{{ a.flat_num }}"></label>
+        <label><input type="submit" name="send" value="Zmień"></label>
+    </form>
+
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h4>{{ group.name }}</h4>
+    <table>
+    <tr><th>lp</th><th>Imię</th><th>Nazwisko</th><th>Szczegóły</th><th>Usuwanie</th></tr>
+
+    {% for p in person %}
+		<tr><td>{{ forloop.counter }}</td>
+			<td>{{ p.first_name }}</td>
+			<td>{{ p.last_name }}</td>
+            <td><a href="/details/{{p.id}}">Pokaż</a></td>
+			<td><a href="/deletefrom/{{p.id}}">Usuń</a></td>
+{#        tutaj trza zmienić link do usuwania osoby - zrobić widok!#}
+		</tr>
+{% endfor %}
+</table>
+    <br>
+    <form method="POST">{% csrf_token %}
+    <div>Dodaj osobę do grupy:
+    <select name="people-list">
+        {% for p in people %}
+        <option value="{{p.id}}">{{ p.first_name }} {{ p.last_name }}</option>
+        {% endfor %}
+    </select>
+    <label><input type="submit" name="send" value="Dodaj"></label>
+    </div>
+    </form>
+
+{% endblock %}

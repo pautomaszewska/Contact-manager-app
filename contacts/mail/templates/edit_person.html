@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h4>EDYTUJ DANE OSOBY</h4>
+    <form method="POST">{% csrf_token %}
+        <label>Imię: <input name="first_name" type="text" value="{{person.first_name}}"></label>
+        <label>Nazwisko: <input name="last_name" type="text" value="{{person.last_name}}"></label>
+        <label>Opis: </label><textarea name="description" type="text">{{person.description}}</textarea>
+        <label><input type="submit" name="send" value="Zmień"></label>
+    </form>
+
+{% endblock %}

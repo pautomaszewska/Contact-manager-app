@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h4>DODAJ OSOBĘ</h4>
+    <form method="POST">{% csrf_token %}
+        <label>Imię: <input name="first_name" type="text"></label>
+        <label>Nazwisko: <input name="last_name" type="text"></label>
+        <label>Opis: </label>
+        <textarea name="description" type="text"></textarea>
+        <label><input type="submit" name="send" value="Dodaj"></label>
+    </form>
+
+{% endblock %}

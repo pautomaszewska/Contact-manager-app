@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h4>SZCZEGÓŁY KONTAKTU</h4>
+    <table border="1px" width="300px">
+    <th colspan="2">PODSTAWOWE DANE</th>
+        <tr><td>Imię:</td><td>{{ person.first_name }}</td></tr>
+        <tr><td>Nazwisko:</td><td>{{ person.last_name }}</td></tr>
+        <tr><td>Opis:</td><td>{{ person.description }}</td></tr>
+        <tr><td colspan="2"><a href="/editperson/{{person.id}}">Edytuj dane</a></td></tr>
+    </table>
+    <br>
+    {% if telephone %}
+    <table border="1px" width="300px">
+        <th colspan="2">TELEFON</th>
+    {% for t in telephone %}
+         <tr><td>Numer telefonu:</td><td> {{ t.number }}</td></tr>
+         <tr><td>Typ:</td><td>{{ t.type }}</td></tr>
+         <tr><td colspan="2"><a href="/editphone/{{t.id}}">Edytuj</a></td></tr>
+        <tr><td colspan="2"><a href="/deletephone/{{t.id}}">Usuń</a></td></tr>
+    {% endfor %}
+    {% endif %}
+     </table>
+    <p><a href="/addphone/{{person.id}}">Dodaj telefon</a></p>
+    <br>
+
+    {% if email %}
+    <table border="1px" width="300px">
+        <th colspan="2">E-MAIL</th>
+    {% for e in email %}
+         <tr><td>Email:</td><td> {{ e.email }}</td></tr>
+         <tr><td>Typ:</td><td>{{ e.type }}</td></tr>
+         <tr><td colspan="2"><a href="/editmail/{{e.id}}">Edytuj</a></td></tr>
+        <tr><td colspan="2"><a href="/deletemail/{{e.id}}">Usuń</a></td></tr>
+     {% endfor %}
+     {% endif %}
+     </table>
+     <p><a href="/addmail/{{person.id}}">Dodaj e-mail</a></p>
+
+
+    {% if address %}
+    <table border="1px" width="300px">
+        <th colspan="2">ADRES</th>
+        <tr><td>Miasto::</td><td>{{ address.city }}</td></tr>
+        <tr><td>Ulica: :</td><td>{{ address.street }}</td></tr>
+        <tr><td>Nr domu: :</td><td>{{ address.house_num }}</td></tr>
+        <tr><td>Nr mieszkania: :</td><td>{{ address.flat_num | default_if_none:""}}</td></tr>
+        <tr><td colspan="2"><a href="/editaddress/{{address.id}}">Edytuj</a></td></tr>
+        <tr><td colspan="2"><a href="/deleteaddress/{{address.id}}">Usuń</a></td></tr>
+     </table>
+    {% endif %}
+
+    {% if not address %}
+    <p><a href="/addaddress/{{person.id}}">Dodaj adres</a></p>
+    {% endif %}
+
+
+
+
+
+{% endblock %}

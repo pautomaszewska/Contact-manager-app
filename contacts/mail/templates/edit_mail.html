@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h4>EDYTUJ ADRES E-MAIL</h4>
+    <form method="POST">{% csrf_token %}
+        <label>E-mail: <input name="email" type="email" value="{{ e.email }}"></label>
+        <label>Typ: <input name="email_type" type="text" value="{{ e.type }}"></label>
+        <label><input type="submit" name="send" value="Zmień"></label>
+    </form>
+
+{% endblock %}

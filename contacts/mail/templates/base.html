@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+{% load staticfiles %}
+ <link rel="stylesheet" href="{% static 'style.css' %}">
+    <meta charset="UTF-8">
+    {% block title %}
+    <title>Skrzynka kontaktowa</title>
+    {% endblock %}
+</head>
+<body>
+<h3>SKRZYNKA KONTAKTOWA</h3>
+
+        {% block content %}
+
+        {% endblock %}
+<footer>
+   <p><a href="{% url 'showall' %}">Osoby</a> | <a href="{% url 'addperson' %}">Dodaj osobę</a>
+       | <a href="{% url 'groups' %}">Grupy</a> | <a href="{% url 'addgroup' %}">Dodaj grupę</a></p>
+</footer>
+</body>
+</html>

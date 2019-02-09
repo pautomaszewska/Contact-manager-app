@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h4>MOJE GRUPY</h4>
+    <table>
+    <tr><th>lp</th><th>Nazwa</th><th>Edycja</th><th>Usuwanie</th></tr>
+
+    {% for g in group %}
+		<tr><td>{{ forloop.counter }}</td>
+			<td><a href="/groupdetails/{{g.id}}">{{ g.name }}</td>
+            <td><a href="/editgroup/{{g.id}}">Edytuj</a></td>
+			<td><a href="/deletegroup/{{g.id}}">Usuń</a></td>
+		</tr>
+{% endfor %}
+</table>
+
+{% endblock %}
