@@ -9,7 +9,7 @@
     {% for g in group %}
 		<tr><td>{{ forloop.counter }}</td>
 			<td><a href="/groupdetails/{{g.id}}">{{ g.name }}</td>
-            <td><a href="/editgroup/{{g.id}}">Edytuj</a></td>
+            <td><a href="/editgroup/{{g.id}}">Edytuj nazwę</a></td>
 			<td><a href="/deletegroup/{{g.id}}">Usuń</a></td>
 		</tr>
 {% endfor %}

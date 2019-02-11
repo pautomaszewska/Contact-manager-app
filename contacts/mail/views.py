@@ -231,16 +231,46 @@ class AddGroup(View):
         return redirect('groups')
 
 class GroupDetails(View):
-    def get(self, request, id):
-        g = Group.objects.get(id=id)
+    def get(self, request, group_id):
+        g = Group.objects.get(id=group_id)
         people = Person.objects.all()
         person = g.person.all()
-        return render(request, 'group_details.html', {'people': people, 'person': person})
-    def post(self, request, id):
-        g = Group.objects.get(id=id)
+        return render(request, 'group_details.html', {'people': people, 'person': person, 'group': g})
+    def post(self, request, group_id):
+        g = Group.objects.get(id=group_id)
         person = request.POST['people-list']
         idp = person[0]
         p = Person.objects.get(id=idp)
         g.person.add(p)
 
         return HttpResponseRedirect(reverse('groupdetails', args=(g.id,)))
+
+class EditGroup(View):
+    def get(self, request, group_id):
+        g = Group.objects.get(id=group_id)
+        return render(request, 'group_edit.html', {'g': g})
+    def post(self, request, group_id):
+        name = request.POST.get('name')
+
+        g = Group.objects.get(id=group_id)
+        g.name = name
+        g.save()
+
+        return redirect('groups')
+
+class DeleteGroup(View):
+    def get(self, request, group_id):
+        g = Group.objects.get(id=group_id)
+        g.delete()
+        return redirect('groups')
+
+class DeleteFromGroup(View):
+    def get(self,request, group_id, id):
+        g = Group.objects.get(id=group_id)
+        p = Person.objects.get(id=id)
+        p.group_set.remove(g)
+        p.save()
+
+        return HttpResponseRedirect(reverse('groupdetails', args=(g.id,)))
+
+

@@ -2,7 +2,9 @@
 
 {% block content %}
 
-<h4>{{ group.name }}</h4>
+<div>{{ group.name }}</div>
+
+    <br>
     <table>
     <tr><th>lp</th><th>Imię</th><th>Nazwisko</th><th>Szczegóły</th><th>Usuwanie</th></tr>
 
@@ -11,8 +13,7 @@
 			<td>{{ p.first_name }}</td>
 			<td>{{ p.last_name }}</td>
             <td><a href="/details/{{p.id}}">Pokaż</a></td>
-			<td><a href="/deletefrom/{{p.id}}">Usuń</a></td>
-{#        tutaj trza zmienić link do usuwania osoby - zrobić widok!#}
+			<td><a href="/deletefrom/{{p.id}}/{{ group.id }}">Usuń</a></td>
 		</tr>
 {% endfor %}
 </table>

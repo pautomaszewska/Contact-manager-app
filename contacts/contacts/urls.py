@@ -16,7 +16,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, re_path
 from mail.views import AddPerson, AddPhone, AddMail, AddAddress, ShowAll, PersonDetails, EditPerson, EditPhone, \
-    EditMail, EditAddress, DeletePerson, DeletePhone, DeleteMail, DeleteAddress, Groups, AddGroup, GroupDetails
+    EditMail, EditAddress, DeletePerson, DeletePhone, DeleteMail, DeleteAddress, Groups, AddGroup, GroupDetails, EditGroup, \
+    DeleteGroup, DeleteFromGroup
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -36,7 +37,10 @@ urlpatterns = [
     path('deleteaddress/<id>', DeleteAddress.as_view(), name='deleteaddress'),
     path('groups', Groups.as_view(), name='groups'),
     path('addgroup', AddGroup.as_view(), name='addgroup'),
-    path('groupdetails/<id>', GroupDetails.as_view(), name='groupdetails'),
+    path('groupdetails/<group_id>', GroupDetails.as_view(), name='groupdetails'),
+    path('editgroup/<group_id>', EditGroup.as_view(), name='editgroup'),
+    path('deletegroup/<group_id>', DeleteGroup.as_view(), name='deletegroup'),
+    path('deletefrom/<id>/<group_id>', DeleteFromGroup.as_view(), name='deletefrom'),
 
 
 ]
