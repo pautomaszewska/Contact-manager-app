@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h4>ZNAJDŹ OSOBĘ</h4>
+    <form method="POST">{% csrf_token %}
+        <label>Imię: <input type="text" name="first-name">
+        <label>Nazwisko: <input type="text" name="last-name">
+        <label><input type="submit" name="send" value="Szukaj"></label>
+    </form>
+
+
+
+{% endblock %}

@@ -273,4 +273,25 @@ class DeleteFromGroup(View):
 
         return HttpResponseRedirect(reverse('groupdetails', args=(g.id,)))
 
+class Search(View):
+    def get(self, request):
+        return render(request, 'search.html')
+    def post(self, request):
+        first_name = request.POST.get('first-name')
+        last_name = request.POST.get('last-name')
+
+        if first_name:
+            person = Person.objects.filter(first_name=first_name)
+            group = Group.objects.filter(person__first_name=first_name)
+        elif last_name:
+            person = Person.objects.filter(last_name=last_name)
+            group = Group.objects.filter(person__last_name=last_name)
+
+        elif first_name and last_name:
+            person = Person.objects.filter(first_name=first_name, last_name=last_name)
+            group = Group.objects.filter(person__first_name=first_name, person__last_name=last_name)
+
+        return render(request, 'search_results.html', {'person': person, 'group': group})
+
+
 

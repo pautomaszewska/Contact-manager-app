@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path, re_path
 from mail.views import AddPerson, AddPhone, AddMail, AddAddress, ShowAll, PersonDetails, EditPerson, EditPhone, \
     EditMail, EditAddress, DeletePerson, DeletePhone, DeleteMail, DeleteAddress, Groups, AddGroup, GroupDetails, EditGroup, \
-    DeleteGroup, DeleteFromGroup
+    DeleteGroup, DeleteFromGroup, Search
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -41,6 +41,7 @@ urlpatterns = [
     path('editgroup/<group_id>', EditGroup.as_view(), name='editgroup'),
     path('deletegroup/<group_id>', DeleteGroup.as_view(), name='deletegroup'),
     path('deletefrom/<id>/<group_id>', DeleteFromGroup.as_view(), name='deletefrom'),
+    path('search', Search.as_view(), name='search'),
 
 
 ]

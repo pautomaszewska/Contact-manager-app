@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h4>WYNIKI WYSZUKIWANIA</h4>
+    <table border="1px">
+    <tr><th>lp</th><th>Imię</th><th>Nazwisko</th><th>Grupy</th></tr>
+
+    {% for p in person %}
+		<tr><td>{{ forloop.counter }}</td>
+            <td><a href="/details/{{p.id}}">{{ p.first_name }}</td>
+			<td>{{ p.last_name }}</td>
+            <td>{% for g in group %}
+                <a href="/groupdetails/{{g.id}}">{{ g.name }} &nbsp;
+                {% endfor %}</td>
+		</tr>
+{% endfor %}
+</table>
+
+{% endblock %}

@@ -4,20 +4,30 @@
 <head>
 {% load staticfiles %}
  <link rel="stylesheet" href="{% static 'style.css' %}">
+<link href='http://fonts.googleapis.com/css?family=Cookie' rel='stylesheet' type='text/css'>
     <meta charset="UTF-8">
     {% block title %}
     <title>Skrzynka kontaktowa</title>
     {% endblock %}
 </head>
 <body>
-<h3>SKRZYNKA KONTAKTOWA</h3>
+<div class="header">
+
+
+        <div class="header-title">Skrzynka kontaktowa</div>
+     <div>
+                <a href="{% url 'search' %}">Szukaj</a>
+
+        <a href="{% url 'showall' %}">Osoby</a>
+        <a href="{% url 'addperson' %}">Dodaj osobę</a>
+        <a href="{% url 'groups' %}">Grupy</a>
+        <a href="{% url 'addgroup' %}">Dodaj grupę</a>
+    </div>
+</div>
 
         {% block content %}
 
+
         {% endblock %}
-<footer>
-   <p><a href="{% url 'showall' %}">Osoby</a> | <a href="{% url 'addperson' %}">Dodaj osobę</a>
-       | <a href="{% url 'groups' %}">Grupy</a> | <a href="{% url 'addgroup' %}">Dodaj grupę</a></p>
-</footer>
 </body>
 </html>
