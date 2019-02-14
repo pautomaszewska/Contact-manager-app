@@ -2,8 +2,8 @@
 
 {% block content %}
 
-<h4>DODAJ ADRES E-MAIL</h4>
-    <form method="POST">{% csrf_token %}
+<p>DODAJ ADRES E-MAIL</p>
+    <form class="form" method="POST">{% csrf_token %}
         <label>E-mail: <input name="email" type="email"></label>
         <label>Typ: <input name="email_type" type="text"></label>
         <label><input type="submit" name="send" value="Dodaj"></label>

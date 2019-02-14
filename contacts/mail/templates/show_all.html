@@ -2,18 +2,18 @@
 
 {% block content %}
 
-<h4>MOJE KONTAKTY</h4>
+<p>MOJE KONTAKTY</p>
 <div class="background">
     <table>
     <tr><th>lp</th><th>Imię</th><th>Nazwisko</th><th>Opis</th><th>Edycja</th><th>Usuwanie</th></tr>
 
     {% for p in person %}
 		<tr><td>{{ forloop.counter }}</td>
-			<td><a href="/details/{{p.id}}">{{ p.first_name }}</td>
+			<td class="link"><a href="/details/{{p.id}}">{{ p.first_name }}</td>
 			<td>{{ p.last_name }}</td>
 			<td>{{ p.description }} </td>
-            <td><a href="/editperson/{{p.id}}">Edytuj</a></td>
-			<td><a href="/deleteperson/{{p.id}}">Usuń</a></td>
+            <td class="link"><a href="/editperson/{{p.id}}">Edytuj</a></td>
+			<td class="link"><a href="/deleteperson/{{p.id}}">Usuń</a></td>
 		</tr>
 {% endfor %}
 </table>

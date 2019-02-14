@@ -3,8 +3,9 @@
 <html lang="en">
 <head>
 {% load staticfiles %}
- <link rel="stylesheet" href="{% static 'style.css' %}">
-<link href='http://fonts.googleapis.com/css?family=Cookie' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link href='http://fonts.googleapis.com/css?family=Cookie' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Arsenal&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
     <meta charset="UTF-8">
     {% block title %}
     <title>Skrzynka kontaktowa</title>
@@ -14,14 +15,13 @@
 <div class="header">
 
 
-        <div class="header-title">Skrzynka kontaktowa</div>
+    <div class="header-title">Skrzynka kontaktowa</div>
      <div>
-                <a href="{% url 'search' %}">Szukaj</a>
-
-        <a href="{% url 'showall' %}">Osoby</a>
-        <a href="{% url 'addperson' %}">Dodaj osobę</a>
-        <a href="{% url 'groups' %}">Grupy</a>
-        <a href="{% url 'addgroup' %}">Dodaj grupę</a>
+         <a href="{% url 'showall' %}">Osoby</a>
+         <a href="{% url 'addperson' %}">Dodaj osobę</a>
+         <a href="{% url 'groups' %}">Grupy</a>
+         <a href="{% url 'addgroup' %}">Dodaj grupę</a>
+         <a href="{% url 'search' %}">Szukaj</a>
     </div>
 </div>
 
@@ -29,5 +29,7 @@
 
 
         {% endblock %}
+
+<script type="text/JavaScript" src="{% static 'app.js' %}"></script>
 </body>
 </html>

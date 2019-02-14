@@ -1,34 +1,37 @@
+body {
+   font-family: 'Arsenal', sans-serif;
+    font-size: 18px;
+}
+
 h2, h3 , h4 {
-     font-family: Arial, Helvetica, sans-serif;
-    font-weight: bold;
     text-align: center;
 }
 
 p, div {
-    font-family: Arial, Helvetica, sans-serif;
     text-align: center;
-    font-size: 16px;
 }
 
 
 form {
-    font-family: Verdana, Arial, sans-serif;
     text-align: center;
-    font-size: 16px;
     width: 80%;
-
 }
 
 table {
-    background-color: #dbefeb;
-    border: 1px;
+
+    position:  relative;
+    /*margin-top: -60px;*/
+     /*background-color: #e4e3e3;*/
+    border: 1px solid;
     border-collapse: collapse;
     border-spacing: 0;
     text-align: center;
-    width: 80%;
-    font: 15px "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    width: 70%;
     margin-left: auto;
-margin-right: auto;
+    margin-right: auto;
+    padding: 100px 10px;
+    overflow: hidden;
+    border-radius: 10px;
 
 
 }
@@ -37,15 +40,21 @@ td, tr {
 
     border: 1px solid transparent;
     height: 30px;
+    width: 10px;
     /*width: 50%;*/
+
 
 }
 
+tr:hover {
+    background-color: #efeff0;
+}
+
 th {
-    background: #555b6e;
-    color: #cccccc;
-    font-weight: bold;
+    background: #cfd11a;
+    /*color: #faf9f9;*/
     text-align: center;
+    font-weight: lighter;
 }
 
 td {
@@ -66,12 +75,16 @@ a:link, a:visited {
     color: black;
     display: inline-block;
 
+
+
 }
 
-/*.link:hover {*/
+
+
+/*a:hover {*/
     /*background-color:  #160f29;*/
     /*color: white;*/
-/*}*/
+}
 
 /*a:hover, a:active {*/
     /*color: white;*/
@@ -96,7 +109,6 @@ a:link, a:visited {
     margin:0 0 3px 0;
 	padding:0px;
 	display:block;
-	font-weight: bold;
     width: 100%;
 
 }
@@ -104,13 +116,12 @@ a:link, a:visited {
     margin: 10px auto;
     max-width: 300px;
     padding: 20px 12px 10px 25px;
-    font: 15px "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 }
 
 .form input {
     padding: 0;
 	display: block;
-    justify-content: center
+    justify-content: center;
 	margin: 10px 0 0 0;
     width: 95%;
 }
@@ -126,17 +137,21 @@ a:link, a:visited {
 }
 
 .form input[type=submit] {
-  color: black;
   padding: 12px 20px;
   border: none;
   border-radius: 4px;
     width: 100%;
+    background-color: #cccccc;
 
+}
+
+.form input[type=submit]:hover {
+    background-color: #cfd11a;
 }
 
 .header {
     overflow: hidden;
-  background-color: #555b6e;
+   background-image: linear-gradient(to right top, #5d6f77, #6c7883, #7c808c, #8c8995, #9b939c);
   padding: 20px 10px;
     color: #faf9f9;
     border-radius: 10px;
@@ -146,11 +161,13 @@ a:link, a:visited {
 .header-title {
     display: inline-block;
     font:  30px 'Cookie', Helvetica, sans-serif;
+    color: #450920;
 }
 
 .header a {
   font-size: 15px;
-  background-color: #838795;
+  /*background-color: #cfd11a;*/
+    border: 2px solid #cfd11a;
     border-radius: 4px;
 
 
@@ -163,17 +180,40 @@ a:link, a:visited {
     padding: 10px;
     margin: 5px;
 
+}
 
+.header a:hover {
+    background-color: #cfd11a;
+    color: black;
+}
+
+/*.background {*/
+  /*padding: 120px 1px;*/
+  /*border: 2px solid #555b6e;*/
+    /*border-radius: 10px;*/
+    /*display: flex;*/
+  /*justify-content: center;*/
+  /*align-items: center;*/
+
+
+/*}*/
+
+.info {
 
 }
 
-.background {
-
-     overflow: hidden;
-  padding: 120px 10px;
-  border: 2px solid #555b6e;
-    border-radius: 10px;
-
+.info  td {
+  border-bottom: 1px solid #9B939C;
+  border-right: none;
 }
 
+.info a {
+     border: 2px dotted #cfd11a;
+    border-radius: 4px;
+    width: 150px;
+}
+
+.info a:hover {
+    background-color: #cfd11a;
+}
 

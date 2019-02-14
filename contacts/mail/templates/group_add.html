@@ -3,7 +3,7 @@
 {% block content %}
 
 <h4>DODAJ GRUPĘ</h4>
-    <form method="POST">{% csrf_token %}
+    <form class="form" method="POST">{% csrf_token %}
         <label>Nazwa: <input name="name" type="text"></label>
         <label><input type="submit" name="send" value="Dodaj"></label>
     </form>

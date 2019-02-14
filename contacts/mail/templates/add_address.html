@@ -2,8 +2,8 @@
 
 {% block content %}
 
-<h4>DODAJ ADRES</h4>
-    <form method="POST">{% csrf_token %}
+<p>DODAJ ADRES</p>
+    <form class="form" method="POST">{% csrf_token %}
         <label>Miasto: <input name="city" type="text" ></label>
         <label>Ulica: <input name="street" type="text" value="{{ a.street }}"></label>
         <label>Numer domu: <input name="house_num" type="number" min="1" step="1" ></label>

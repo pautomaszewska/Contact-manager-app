@@ -2,8 +2,8 @@
 
 {% block content %}
 
-<h4>EDYTUJ DANE OSOBY</h4>
-    <form method="POST">{% csrf_token %}
+<p>EDYTUJ DANE OSOBY</p>
+    <form class="form" method="POST">{% csrf_token %}
         <label>Imię: </label>
         <input name="first_name" type="text" value="{{person.first_name}}">
         <label>Nazwisko: </label>

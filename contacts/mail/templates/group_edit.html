@@ -2,8 +2,8 @@
 
 {% block content %}
 
-<h4>EDYTUJ NAZWĘ GRUPY</h4>
-    <form method="POST">{% csrf_token %}
+<p>EDYTUJ NAZWĘ GRUPY</p>
+    <form class="form" method="POST">{% csrf_token %}
         <label>Nazwa: <input name="name" type="text" value="{{ g.name }}"></label>
         <label><input type="submit" name="send" value="Zmień"></label>
     </form>

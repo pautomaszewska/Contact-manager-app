@@ -2,8 +2,8 @@
 
 {% block content %}
 
-<h4>EDYTUJ NUMER TELEFONU</h4>
-    <form method="POST">{% csrf_token %}
+<p>EDYTUJ NUMER TELEFONU</p>
+    <form class="form" method="POST">{% csrf_token %}
         <label>Telefon: <input name="phone" type="number" value="{{ t.number }}"></label>
         <label>Typ: <input name="phone_type" type="text" value="{{ t.type }}"></label>
         <label><input type="submit" name="send" value="Zmień"></label>

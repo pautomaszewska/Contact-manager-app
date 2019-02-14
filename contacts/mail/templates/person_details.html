@@ -2,8 +2,8 @@
 
 {% block content %}
 
-<h4>SZCZEGÓŁY KONTAKTU</h4>
-    <table border="1px" width="300px">
+<p>SZCZEGÓŁY KONTAKTU</p>
+    <table class="info">
     <th colspan="2">PODSTAWOWE DANE</th>
         <tr><td>Imię:</td><td>{{ person.first_name }}</td></tr>
         <tr><td>Nazwisko:</td><td>{{ person.last_name }}</td></tr>
@@ -12,7 +12,7 @@
     </table>
     <br>
     {% if telephone %}
-    <table border="1px" width="300px">
+    <table class="info">
         <th colspan="2">TELEFON</th>
     {% for t in telephone %}
          <tr><td>Numer telefonu:</td><td> {{ t.number }}</td></tr>
@@ -22,11 +22,10 @@
     {% endfor %}
     {% endif %}
      </table>
-    <p><a href="/addphone/{{person.id}}">Dodaj telefon</a></p>
-    <br>
+    <p class="info"><a href="/addphone/{{person.id}}">Dodaj telefon</a></p>
 
     {% if email %}
-    <table border="1px" width="300px">
+    <table class="info">
         <th colspan="2">E-MAIL</th>
     {% for e in email %}
          <tr><td>Email:</td><td> {{ e.email }}</td></tr>
@@ -36,11 +35,11 @@
      {% endfor %}
      {% endif %}
      </table>
-     <p><a href="/addmail/{{person.id}}">Dodaj e-mail</a></p>
+     <p class="info"><a href="/addmail/{{person.id}}">Dodaj e-mail</a></p>
 
 
     {% if address %}
-    <table border="1px" width="300px">
+    <table class="info">
         <th colspan="2">ADRES</th>
         <tr><td>Miasto::</td><td>{{ address.city }}</td></tr>
         <tr><td>Ulica: :</td><td>{{ address.street }}</td></tr>
@@ -52,7 +51,7 @@
     {% endif %}
 
     {% if not address %}
-    <p><a href="/addaddress/{{person.id}}">Dodaj adres</a></p>
+    <p class="info"><a href="/addaddress/{{person.id}}">Dodaj adres</a></p>
     {% endif %}
 
 
