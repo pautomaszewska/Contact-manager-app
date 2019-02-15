@@ -18,7 +18,7 @@
 {% endfor %}
 </table>
     <br>
-    <form class="form" method="POST">{% csrf_token %}
+    <form class="add" method="POST">{% csrf_token %}
     <div>Dodaj osobę do grupy:
     <select name="people-list">
         {% for p in people %}

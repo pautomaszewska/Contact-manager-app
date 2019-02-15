@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     for (var i = 0; i < box.length; i++) {
         box[i].addEventListener('mouseover', function () {
-            this.style.backgroundImage = 'linear-gradient(to right top, #5d6f77, #6c7883, #7c808c, #8c8995, #9b939c)';
+            this.style.backgroundImage = 'linear-gradient(to left top, #d5cad6, #c6bcc7, #b8aeb9, #a9a0aa, #9b939c)';
 
             this.firstElementChild.style.color = 'white';
         });
