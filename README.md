@@ -3,7 +3,7 @@
 ### Info
 Simple app created for contacts management.
 
-![main](./images/main.png)
+![main](contacts/images/main.png)
 
 ### Technologies
 * Python 3.6 
